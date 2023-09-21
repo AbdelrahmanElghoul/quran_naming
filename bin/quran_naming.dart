@@ -2,10 +2,13 @@ import 'dart:convert';
 import 'dart:io';
 void main(List<String> arguments) async{
 
+  ///-> audio format
   final String format='.mp3';
+  ///-> specify path
   final List<FileSystemEntity> entities=await getFiles('D:\\قرآن\\حصري مرتل');
   final List<String> names=await getNames("assets/فهرس.txt");
 
+  ///-> making sure its same length as mapped file
   assert(names.length == entities.length,"names is ${names.length}, while audios is ${entities.length}");
 
   for(int i=0;i<names.length;i++){
